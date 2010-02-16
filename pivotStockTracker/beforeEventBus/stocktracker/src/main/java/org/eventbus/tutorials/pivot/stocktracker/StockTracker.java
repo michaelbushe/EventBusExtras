@@ -16,74 +16,37 @@
  */
 package org.eventbus.tutorials.pivot.stocktracker;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
+import org.apache.pivot.collections.ArrayList;
+import org.apache.pivot.collections.List;
+import org.apache.pivot.collections.Map;
+import org.apache.pivot.collections.Sequence;
+import org.apache.pivot.util.Resources;
+import org.apache.pivot.util.concurrent.Task;
+import org.apache.pivot.util.concurrent.TaskListener;
+import org.apache.pivot.wtk.*;
+import org.apache.pivot.wtkx.WTKX;
+import org.apache.pivot.wtkx.WTKXSerializer;
+
 import java.text.DateFormat;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
-import org.apache.pivot.web.GetQuery;
-
-import org.apache.pivot.collections.ArrayList;
-import org.apache.pivot.collections.List;
-import org.apache.pivot.collections.Map;
-import org.apache.pivot.collections.Sequence;
-import org.apache.pivot.serialization.CSVSerializer;
-import org.apache.pivot.util.Resources;
-import org.apache.pivot.util.concurrent.Task;
-import org.apache.pivot.util.concurrent.TaskListener;
-import org.apache.pivot.wtk.Application;
-import org.apache.pivot.wtk.ApplicationContext;
-import org.apache.pivot.wtk.Button;
-import org.apache.pivot.wtk.ButtonPressListener;
-import org.apache.pivot.wtk.Component;
-import org.apache.pivot.wtk.ComponentKeyListener;
-import org.apache.pivot.wtk.Container;
-import org.apache.pivot.wtk.DesktopApplicationContext;
-import org.apache.pivot.wtk.Display;
-import org.apache.pivot.wtk.Form;
-import org.apache.pivot.wtk.Keyboard;
-import org.apache.pivot.wtk.Label;
-import org.apache.pivot.wtk.MessageType;
-import org.apache.pivot.wtk.Span;
-import org.apache.pivot.wtk.TableView;
-import org.apache.pivot.wtk.TableViewRowListener;
-import org.apache.pivot.wtk.TableViewSelectionListener;
-import org.apache.pivot.wtk.TableViewSortListener;
-import org.apache.pivot.wtk.TaskAdapter;
-import org.apache.pivot.wtk.TextInput;
-import org.apache.pivot.wtk.TextInputTextListener;
-import org.apache.pivot.wtk.Window;
-import org.apache.pivot.wtk.content.TableViewRowComparator;
-import org.apache.pivot.wtk.text.TextNode;
-import org.apache.pivot.wtkx.WTKX;
-import org.apache.pivot.wtkx.WTKXSerializer;
-
-public class StockTracker implements Application {
+public class StockTracker implements Application, SymbolListChangeEventListener {
     private ArrayList<String> symbols = new ArrayList<String>();
 
     private Window window = null;
 
-    @WTKX private TableView stocksTableView;
-    @WTKX private TextInput symbolTextInput;
-    @WTKX private Button addSymbolButton;
-    @WTKX private Button removeSymbolsButton;
-    @WTKX private Label lastUpdateLabel;
-    @WTKX private Button yahooFinanceButton;
+    @WTKX(id="table.stockTablePane")  private StockTableView stocksTableView;
+    @WTKX(id="symbol.symbolPane")  private SymbolPane symbolPane;
+    @WTKX(id="yahooFinance.yahooPane")  private YahooPane yahooPane;
+    @WTKX(id="yahooFinance.lastUpdateLabel")  private Label lastUpdateLabel;
     @WTKX(id="detail.rootPane") private Container detailRootPane;
     @WTKX(id="detail.changeLabel") private Label detailChangeLabel;
 
-    private GetQuery getQuery = null;
-
     public static final String LANGUAGE_PROPERTY_NAME = "language";
-    public static final String SERVICE_HOSTNAME = "download.finance.yahoo.com";
-    public static final String SERVICE_PATH = "/d/quotes.csv";
+
     public static final long REFRESH_INTERVAL = 15000;
-    public static final String YAHOO_FINANCE_HOME = "http://finance.yahoo.com";
 
     public StockTracker() {
         symbols.setComparator(new Comparator<String>() {
@@ -99,7 +62,6 @@ public class StockTracker implements Application {
         symbols.add("AMZN");
         symbols.add("GOOG");
         symbols.add("ORCL");
-        symbols.add("JAVA");
     }
 
     @Override
@@ -118,29 +80,10 @@ public class StockTracker implements Application {
         wtkxSerializer.bind(this, StockTracker.class);
 
         // Wire up event handlers
-        stocksTableView.getTableViewRowListeners().add(new TableViewRowListener.Adapter() {
-            @Override
-            public void rowsSorted(TableView tableView) {
-                List<?> tableData = stocksTableView.getTableData();
-                if (tableData.getLength() > 0) {
-                    stocksTableView.setSelectedIndex(0);
-                }
-            }
-        });
-
         stocksTableView.getTableViewSelectionListeners().add(new TableViewSelectionListener.Adapter() {
             @Override
             public void selectedRangesChanged(TableView tableView, Sequence<Span> previousSelectedRanges) {
                 refreshDetail();
-            }
-        });
-
-        stocksTableView.getTableViewSortListeners().add(new TableViewSortListener.Adapter() {
-            @Override
-            @SuppressWarnings("unchecked")
-            public void sortChanged(TableView tableView) {
-                List<Object> tableData = (List<Object>)tableView.getTableData();
-                tableData.setComparator(new TableViewRowComparator(tableView));
             }
         });
 
@@ -155,57 +98,6 @@ public class StockTracker implements Application {
             }
         });
 
-        symbolTextInput.getTextInputTextListeners().add(new TextInputTextListener() {
-            @Override
-            public void textChanged(TextInput textInput) {
-                TextNode textNode = textInput.getTextNode();
-                addSymbolButton.setEnabled(textNode.getCharacterCount() > 0);
-            }
-        });
-
-        symbolTextInput.getComponentKeyListeners().add(new ComponentKeyListener.Adapter() {
-            @Override
-            public boolean keyPressed(Component component, int keyCode, Keyboard.KeyLocation keyLocation) {
-                if (keyCode == Keyboard.KeyCode.ENTER) {
-                    addSymbol();
-                }
-
-                return false;
-            }
-        });
-
-        addSymbolButton.getButtonPressListeners().add(new ButtonPressListener() {
-            @Override
-            public void buttonPressed(Button button) {
-                addSymbol();
-            }
-        });
-
-        removeSymbolsButton.getButtonPressListeners().add(new ButtonPressListener() {
-            @Override
-            public void buttonPressed(Button button) {
-                removeSelectedSymbols();
-            }
-        });
-
-        yahooFinanceButton.getButtonPressListeners().add(new ButtonPressListener() {
-            @Override
-            public void buttonPressed(Button button) {
-                Desktop desktop = Desktop.getDesktop();
-
-                try {
-                    desktop.browse(new URL(YAHOO_FINANCE_HOME).toURI());
-                } catch(MalformedURLException exception) {
-                    throw new RuntimeException(exception);
-                } catch(URISyntaxException exception) {
-                    throw new RuntimeException(exception);
-                } catch(IOException exception) {
-                    System.out.println("Unable to open "
-                        + YAHOO_FINANCE_HOME + " in default browser.");
-                }
-            }
-        });
-
         window.open(display);
 
         refreshTable();
@@ -217,7 +109,8 @@ public class StockTracker implements Application {
             }
         }, REFRESH_INTERVAL);
 
-        symbolTextInput.requestFocus();
+        symbolPane.addChangeListener(this);
+        symbolPane.requestFocus();
     }
 
     @Override
@@ -239,103 +132,63 @@ public class StockTracker implements Application {
 
     @SuppressWarnings("unchecked")
     private void refreshTable() {
-        getQuery = new GetQuery(SERVICE_HOSTNAME, SERVICE_PATH);
+        StockQuery.runQuery(symbols, createTaskListener());
+    }
 
-        StringBuilder symbolsArgumentBuilder = new StringBuilder();
-        for (int i = 0, n = symbols.getLength(); i < n; i++) {
-            if (i > 0) {
-                symbolsArgumentBuilder.append(",");
-            }
+    private TaskListener createTaskListener() {
+        TaskListener taskListener = new TaskAdapter<Object>(new TaskListener<Object>() {
+             @Override
+             public void taskExecuted(Task<Object> task) {
+                 List<Object> quotes = (List<Object>)task.getResult();
 
-            symbolsArgumentBuilder.append(symbols.get(i));
-        }
+                 // Preserve any existing sort and selection
+                 Sequence<?> selectedStocks = stocksTableView.getSelectedRows();
 
-        // Format:
-        // s - symbol
-        // n - company name
-        // l1 - most recent value
-        // o - opening value
-        // h - high value
-        // g - low value
-        // c1 - change percentage
-        // v - volume
-        String symbolsArgument = symbolsArgumentBuilder.toString();
-        getQuery.getParameters().put("s", symbolsArgument);
-        getQuery.getParameters().put("f", "snl1ohgc1v");
+                 List<Object> tableData = (List<Object>)stocksTableView.getTableData();
+                 Comparator<Object> comparator = tableData.getComparator();
+                 quotes.setComparator(comparator);
 
-        CSVSerializer quoteSerializer = new CSVSerializer();
-        quoteSerializer.getKeys().add("symbol");
-        quoteSerializer.getKeys().add("companyName");
-        quoteSerializer.getKeys().add("value");
-        quoteSerializer.getKeys().add("openingValue");
-        quoteSerializer.getKeys().add("highValue");
-        quoteSerializer.getKeys().add("lowValue");
-        quoteSerializer.getKeys().add("change");
-        quoteSerializer.getKeys().add("volume");
+                 stocksTableView.setTableData(quotes);
 
-        quoteSerializer.setItemClass(StockQuote.class);
-        getQuery.setSerializer(quoteSerializer);
+                 if (selectedStocks.getLength() > 0) {
+                     // Select current indexes of selected stocks
+                     for (int i = 0, n = selectedStocks.getLength(); i < n; i++) {
+                         StockQuote selectedStock = (StockQuote)selectedStocks.get(i);
 
-        getQuery.execute(new TaskAdapter<Object>(new TaskListener<Object>() {
-            @Override
-            public void taskExecuted(Task<Object> task) {
-                if (task == getQuery) {
-                    List<Object> quotes = (List<Object>)task.getResult();
+                         int index = 0;
+                         for (StockQuote stock : (List<StockQuote>)stocksTableView.getTableData()) {
+                             if (stock.getSymbol().equals(selectedStock.getSymbol())) {
+                                 stocksTableView.addSelectedIndex(index);
+                                 break;
+                             }
 
-                    // Preserve any existing sort and selection
-                    Sequence<?> selectedStocks = stocksTableView.getSelectedRows();
+                             index++;
+                         }
+                     }
+                 } else {
+                     if (quotes.getLength() > 0) {
+                         stocksTableView.setSelectedIndex(0);
+                     }
+                 }
 
-                    List<Object> tableData = (List<Object>)stocksTableView.getTableData();
-                    Comparator<Object> comparator = tableData.getComparator();
-                    quotes.setComparator(comparator);
+                 refreshDetail();
 
-                    stocksTableView.setTableData(quotes);
+                 DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
+                     DateFormat.MEDIUM, Locale.getDefault());
+                 lastUpdateLabel.setText(dateFormat.format(new Date()));
+             }
 
-                    if (selectedStocks.getLength() > 0) {
-                        // Select current indexes of selected stocks
-                        for (int i = 0, n = selectedStocks.getLength(); i < n; i++) {
-                            StockQuote selectedStock = (StockQuote)selectedStocks.get(i);
-
-                            int index = 0;
-                            for (StockQuote stock : (List<StockQuote>)stocksTableView.getTableData()) {
-                                if (stock.getSymbol().equals(selectedStock.getSymbol())) {
-                                    stocksTableView.addSelectedIndex(index);
-                                    break;
-                                }
-
-                                index++;
-                            }
-                        }
-                    } else {
-                        if (quotes.getLength() > 0) {
-                            stocksTableView.setSelectedIndex(0);
-                        }
-                    }
-
-                    refreshDetail();
-
-                    DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-                        DateFormat.MEDIUM, Locale.getDefault());
-                    lastUpdateLabel.setText(dateFormat.format(new Date()));
-
-                    getQuery = null;
-                }
-            }
-
-            @Override
-            public void executeFailed(Task<Object> task) {
-                if (task == getQuery) {
-                    System.err.println(task.getFault());
-                    getQuery = null;
-                }
-            }
-        }));
+             @Override
+             public void executeFailed(Task<Object> task) {
+                     System.err.println(task.getFault());
+             }
+         });
+        return taskListener;
     }
 
     @SuppressWarnings("unchecked")
     private void refreshDetail() {
         int firstSelectedIndex = stocksTableView.getFirstSelectedIndex();
-        removeSymbolsButton.setEnabled(firstSelectedIndex != -1);
 
         StockQuote stockQuote = null;
 
@@ -351,6 +204,7 @@ public class StockTracker implements Application {
         } else {
             stockQuote = new StockQuote();
         }
+        symbolPane.setSelectedStockQuote(stockQuote);
 
         StockQuoteView stockQuoteView = new StockQuoteView(stockQuote);
         detailRootPane.load(stockQuoteView);
@@ -364,9 +218,19 @@ public class StockTracker implements Application {
         }
     }
 
+
+    @Override
+    public void symbolChanged(SymbolListChangeEvent event) {
+        if (event.getChangeType() == SymbolListChangeEvent.ChangeType.ADDED) {
+            addSymbol(event);
+        } else {
+            removeSelectedSymbols();
+        }
+    }
+
     @SuppressWarnings("unchecked")
-    private void addSymbol() {
-        String symbol = symbolTextInput.getText().toUpperCase();
+    private void addSymbol(SymbolListChangeEvent event) {
+        String symbol = event.getSymbol();
         if (symbols.indexOf(symbol) == -1) {
             symbols.add(symbol);
 
@@ -378,7 +242,6 @@ public class StockTracker implements Application {
             stocksTableView.setSelectedIndex(index);
         }
 
-        symbolTextInput.setText("");
         refreshTable();
     }
 

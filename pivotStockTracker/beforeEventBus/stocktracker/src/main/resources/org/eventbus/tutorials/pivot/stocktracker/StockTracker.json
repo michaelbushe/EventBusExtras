@@ -21,7 +21,7 @@
     openingValue: "Open",
     highValue: "High",
     lowValue: "Low",
-    change: "Change",
+    change: "ChangeType",
     volume: "Volume",
     addSymbol: "Add symbol",
     removeSymbol: "Remove selected symbols",
