@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stocktracker:YahooPane wtkx:id="yahooFinancePane"
+                         styles="{horizontalAlignment:'right', verticalAlignment:'center'}"
+    xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:wtkx="http://pivot.apache.org/wtkx"
+    xmlns="org.apache.pivot.wtk">
+   <columns>
+       <TablePane.Column width="1*"/>
+       <TablePane.Column width="-1"/>
+   </columns>
+   <rows>
+       <TablePane.Row>
+           <BoxPane>
+               <Label text="%lastUpdate"/>
+               <Label wtkx:id="lastUpdateLabel"/>
+           </BoxPane>
+           <BoxPane styles="{horizontalAlignment:'right'}">
+               <Label text="%dataProvidedBy" />
+               <LinkButton wtkx:id="yahooFinanceButton"
+                   buttonData="%yahooFinance" />
+           </BoxPane>
+       </TablePane.Row>
+   </rows>
+</stocktracker:YahooPane>

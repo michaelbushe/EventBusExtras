@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stocktracker:SymbolPane wtkx:id="symbolPane"
+                         styles="{horizontalAlignment:'left', verticalAlignment:'center'}"
+    xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:wtkx="http://pivot.apache.org/wtkx"
+    xmlns="org.apache.pivot.wtk">
+     <Label text="%symbol" styles="{font:{bold:true}}" />
+     <TextInput wtkx:id="symbolTextInput" textSize="10"
+         maximumLength="8" />
+     <LinkButton wtkx:id="addSymbolButton" enabled="false"
+         tooltipText="%addSymbol">
+         <buttonData>
+             <content:ButtonData icon="@add.png" />
+         </buttonData>
+     </LinkButton>
+     <LinkButton wtkx:id="removeSymbolsButton" enabled="false"
+         tooltipText="%removeSymbol">
+         <buttonData>
+             <content:ButtonData icon="@delete.png" />
+         </buttonData>
+     </LinkButton>
+</stocktracker:SymbolPane>

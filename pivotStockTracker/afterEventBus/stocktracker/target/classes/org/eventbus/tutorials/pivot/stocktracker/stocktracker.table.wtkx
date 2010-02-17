@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stocktracker:StockTableView wtkx:id="stockTablePane" selectMode="multi"
+    styles="{showHorizontalGridLines:false}"
+    xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
+    xmlns:content="org.apache.pivot.wtk.content"
+    xmlns:wtkx="http://pivot.apache.org/wtkx"
+    xmlns="org.apache.pivot.wtk">
+        <columns>
+            <TableView.Column name="symbol"
+                headerData="%symbol" width="1*" />
+            <TableView.Column name="value" headerData="%value" width="1*">
+                <cellRenderer>
+                    <content:TableViewNumberCellRenderer styles="{horizontalAlignment:'right'}"
+                        numberFormat="$$0.00"/>
+                </cellRenderer>
+            </TableView.Column>
+            <TableView.Column name="change" headerData="%change" width="1*">
+                <cellRenderer>
+                    <stocktracker:ChangeCellRenderer styles="{horizontalAlignment:'right'}"
+                        numberFormat="+0.00;-0.00"/>
+                </cellRenderer>
+            </TableView.Column>
+        </columns>
+</stocktracker:StockTableView>
