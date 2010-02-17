@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="63be584f-0b6c-41d3-b079-51ee5aeb5734" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stocktracker.iml" afterPath="$PROJECT_DIR$/stocktracker.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bushe_eventbus_1_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../pom.xml" afterPath="$PROJECT_DIR$/../../pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="stocktracker.iws" />
@@ -101,10 +106,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SymbolPane.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SymbolPane.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="2" selection-start="389" selection-end="389" vertical-scroll-proportion="0.12972973">
+            <state line="6" column="0" selection-start="200" selection-end="238" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1484" selection-end="1621" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -137,11 +151,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockTracker.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StockTracker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="53" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="231" column="0" selection-start="8239" selection-end="8239" vertical-scroll-proportion="4.4573054">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,12 +219,13 @@
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java" />
         <option value="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEventListener.java" />
-        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" />
-        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
         <option value="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx" />
         <option value="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.wtkx" />
         <option value="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.yahoofinance.wtkx" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java" />
+        <option value="$PROJECT_DIR$/../../pom.xml" />
+        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" />
+        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
       </list>
     </option>
   </component>
@@ -255,7 +272,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -334,8 +350,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,9 +371,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -559,25 +576,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1395" height="878" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1395" height="878" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25260028" sideWeight="0.75329816" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23746702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="330" width="1344" height="244" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23746702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18073879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25185734" sideWeight="0.75329816" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="330" width="1344" height="244" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18073879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -660,9 +677,19 @@
         <state line="23" column="0" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="17" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="4" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="63" selection-end="513" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java">
@@ -685,31 +712,26 @@
         <state line="30" column="53" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.java">
+    <entry file="file://$PROJECT_DIR$/../../pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="63" selection-end="513" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="53" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0">
+        <state line="50" column="0" selection-start="1484" selection-end="1621" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="2" selection-start="389" selection-end="389" vertical-scroll-proportion="0.12972973">
+        <state line="6" column="0" selection-start="200" selection-end="238" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="0" selection-start="8239" selection-end="8239" vertical-scroll-proportion="4.4573054">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

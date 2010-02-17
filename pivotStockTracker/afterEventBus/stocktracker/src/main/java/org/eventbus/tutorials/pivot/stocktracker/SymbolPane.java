@@ -1,10 +1,10 @@
 package org.eventbus.tutorials.pivot.stocktracker;
 
-import org.apache.pivot.collections.ArrayList;
 import org.apache.pivot.wtk.*;
 import org.apache.pivot.wtk.text.TextNode;
 import org.apache.pivot.wtkx.Bindable;
 import org.apache.pivot.wtkx.WTKX;
+import org.bushe.swing.event.EventBus;
 
 /**
  * Component for typing in stock symbols with add and remove buttons
@@ -13,7 +13,6 @@ public class SymbolPane extends BoxPane implements Bindable {
     @WTKX private TextInput symbolTextInput;
     @WTKX private Button addSymbolButton;
     @WTKX private Button removeSymbolsButton;
-    ArrayList<SymbolListChangeEventListener> listenerList = new ArrayList<SymbolListChangeEventListener>();
     private String lastSymbol;
 
     public SymbolPane() {
@@ -59,10 +58,6 @@ public class SymbolPane extends BoxPane implements Bindable {
 
     }
 
-    public void addChangeListener(SymbolListChangeEventListener symbolListChangeEventListener) {
-        listenerList.add(symbolListChangeEventListener);
-    }
-
     @Override
     public boolean requestFocus() {
         return symbolTextInput.requestFocus();
@@ -79,22 +74,14 @@ public class SymbolPane extends BoxPane implements Bindable {
         symbolTextInput.setText("");
         SymbolListChangeEvent addedEvent = new SymbolListChangeEvent(symbol,
                 SymbolListChangeEvent.ChangeType.ADDED);
-        notifyListeners(addedEvent);
+        EventBus.publish(addedEvent);
         symbolTextInput.setText("");
     }
 
     private void removeSelectedSymbols(String symbol) {
         SymbolListChangeEvent removedEvent = new SymbolListChangeEvent(symbol,
                 SymbolListChangeEvent.ChangeType.REMOVED);
-        notifyListeners(removedEvent);
+        EventBus.publish(removedEvent);
     }
-
-    private void notifyListeners(SymbolListChangeEvent removedEvent) {
-        for (int i = 0; i < listenerList.getLength(); i++) {
-            SymbolListChangeEventListener symbolListChangeEventListener = listenerList.get(i);
-            symbolListChangeEventListener.symbolChanged(removedEvent);
-        }
-    }
-
 }
 

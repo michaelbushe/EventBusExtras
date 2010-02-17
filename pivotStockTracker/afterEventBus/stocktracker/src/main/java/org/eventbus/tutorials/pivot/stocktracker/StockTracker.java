@@ -26,13 +26,15 @@ import org.apache.pivot.util.concurrent.TaskListener;
 import org.apache.pivot.wtk.*;
 import org.apache.pivot.wtkx.WTKX;
 import org.apache.pivot.wtkx.WTKXSerializer;
+import org.bushe.swing.event.EventBus;
+import org.bushe.swing.event.EventSubscriber;
 
 import java.text.DateFormat;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
 
-public class StockTracker implements Application, SymbolListChangeEventListener {
+public class StockTracker implements Application, EventSubscriber<SymbolListChangeEvent> {
     private ArrayList<String> symbols = new ArrayList<String>();
 
     private Window window = null;
@@ -109,7 +111,7 @@ public class StockTracker implements Application, SymbolListChangeEventListener 
             }
         }, REFRESH_INTERVAL);
 
-        symbolPane.addChangeListener(this);
+        EventBus.subscribe(SymbolListChangeEvent.class, this);
         symbolPane.requestFocus();
     }
 
@@ -220,7 +222,7 @@ public class StockTracker implements Application, SymbolListChangeEventListener 
 
 
     @Override
-    public void symbolChanged(SymbolListChangeEvent event) {
+    public void onEvent(SymbolListChangeEvent event) {
         if (event.getChangeType() == SymbolListChangeEvent.ChangeType.ADDED) {
             addSymbol(event);
         } else {

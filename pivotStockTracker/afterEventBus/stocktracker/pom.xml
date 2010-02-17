@@ -44,6 +44,11 @@
  </build>
  <dependencies>
    <dependency>
+      <groupId>org.bushe</groupId>
+      <artifactId>eventbus</artifactId>
+      <version>1.4</version>
+   </dependency>
+   <dependency>
       <groupId>org.apache.pivot</groupId>
       <artifactId>pivot-core</artifactId>
       <version>1.4</version>

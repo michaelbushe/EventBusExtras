@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Maven: org.bushe:eventbus:1.4" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.apache.pivot:pivot-core:1.4" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.apache.pivot:pivot-wtk:1.4" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.apache.pivot:pivot-web:1.4" level="project" />
