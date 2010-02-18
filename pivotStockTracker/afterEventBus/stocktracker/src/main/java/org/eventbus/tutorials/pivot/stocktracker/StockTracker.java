@@ -19,7 +19,6 @@ package org.eventbus.tutorials.pivot.stocktracker;
 import org.apache.pivot.collections.ArrayList;
 import org.apache.pivot.collections.List;
 import org.apache.pivot.collections.Map;
-import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.util.Resources;
 import org.apache.pivot.util.concurrent.Task;
 import org.apache.pivot.util.concurrent.TaskListener;
@@ -29,9 +28,7 @@ import org.apache.pivot.wtkx.WTKXSerializer;
 import org.bushe.swing.event.EventBus;
 import org.bushe.swing.event.EventSubscriber;
 
-import java.text.DateFormat;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.Locale;
 
 public class StockTracker implements Application, EventSubscriber<SymbolListChangeEvent> {
@@ -39,10 +36,7 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
 
     private Window window = null;
 
-    @WTKX(id="table.stockTablePane")  private StockTableView stocksTableView;
     @WTKX(id="symbol.symbolPane")  private SymbolPane symbolPane;
-    @WTKX(id="yahooFinance.yahooPane")  private YahooPane yahooPane;
-    @WTKX(id="yahooFinance.lastUpdateLabel")  private Label lastUpdateLabel;
 
     public static final String LANGUAGE_PROPERTY_NAME = "language";
 
@@ -116,49 +110,16 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
     }
 
     private TaskListener createTaskListener() {
-        TaskListener taskListener = new TaskAdapter<Object>(new TaskListener<Object>() {
+        TaskListener taskListener = new TaskAdapter<StockQuote>(new TaskListener<StockQuote>() {
              @Override
-             public void taskExecuted(Task<Object> task) {
-                 List<Object> quotes = (List<Object>)task.getResult();
-
-                 // Preserve any existing sort and selection
-                 Sequence<?> selectedStocks = stocksTableView.getSelectedRows();
-
-                 List<Object> tableData = (List<Object>)stocksTableView.getTableData();
-                 Comparator<Object> comparator = tableData.getComparator();
-                 quotes.setComparator(comparator);
-
-                 stocksTableView.setTableData(quotes);
-
-                 if (selectedStocks.getLength() > 0) {
-                     // Select current indexes of selected stocks
-                     for (int i = 0, n = selectedStocks.getLength(); i < n; i++) {
-                         StockQuote selectedStock = (StockQuote)selectedStocks.get(i);
-
-                         int index = 0;
-                         for (StockQuote stock : (List<StockQuote>)stocksTableView.getTableData()) {
-                             if (stock.getSymbol().equals(selectedStock.getSymbol())) {
-                                 stocksTableView.addSelectedIndex(index);
-                                 break;
-                             }
-
-                             index++;
-                         }
-                     }
-                 } else {
-                     if (quotes.getLength() > 0) {
-                         stocksTableView.setSelectedIndex(0);
-                     }
-                 }
-
-                 DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
-                     DateFormat.MEDIUM, Locale.getDefault());
-                 lastUpdateLabel.setText(dateFormat.format(new Date()));
+             public void taskExecuted(Task<StockQuote> task) {
+                 List<StockQuote> quotes = (List<StockQuote>)task.getResult();
+                 EventBus.publish(quotes);
              }
 
              @Override
-             public void executeFailed(Task<Object> task) {
-                     System.err.println(task.getFault());
+             public void executeFailed(Task<StockQuote> task) {
+                 System.err.println(task.getFault());
              }
          });
         return taskListener;

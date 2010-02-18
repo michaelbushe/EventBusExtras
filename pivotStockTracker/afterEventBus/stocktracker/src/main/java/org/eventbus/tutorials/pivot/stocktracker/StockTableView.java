@@ -9,6 +9,8 @@ import org.bushe.swing.event.EventBus;
 import org.bushe.swing.event.annotation.AnnotationProcessor;
 import org.bushe.swing.event.annotation.EventSubscriber;
 
+import java.util.Comparator;
+
 /**
  * Refactored out from Pivot's StockTracker.java
  */
@@ -108,5 +110,38 @@ public class StockTableView extends TableView {
             first = false;
         }
         setSelectedIndex(selectedIndex);
+    }
+
+    @EventSubscriber
+    public void updateData(List<StockQuote> quotes) {
+        // Preserve any existing sort and selection
+        Sequence<?> selectedStocks = getSelectedRows();
+
+        List<StockQuote> tableData = (List<StockQuote>)getTableData();
+        Comparator<StockQuote> comparator = tableData.getComparator();
+        quotes.setComparator(comparator);
+
+        setTableData(quotes);
+
+        if (selectedStocks.getLength() > 0) {
+            // Select current indexes of selected stocks
+            for (int i = 0, n = selectedStocks.getLength(); i < n; i++) {
+                StockQuote selectedStock = (StockQuote)selectedStocks.get(i);
+
+                int index = 0;
+                for (StockQuote stock : (List<StockQuote>)getTableData()) {
+                    if (stock.getSymbol().equals(selectedStock.getSymbol())) {
+                        addSelectedIndex(index);
+                        break;
+                    }
+
+                    index++;
+                }
+            }
+        } else {
+            if (quotes.getLength() > 0) {
+                setSelectedIndex(0);
+            }
+        }
     }
 }
