@@ -43,8 +43,6 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
     @WTKX(id="symbol.symbolPane")  private SymbolPane symbolPane;
     @WTKX(id="yahooFinance.yahooPane")  private YahooPane yahooPane;
     @WTKX(id="yahooFinance.lastUpdateLabel")  private Label lastUpdateLabel;
-    @WTKX(id="detail.rootPane") private Container detailRootPane;
-    @WTKX(id="detail.changeLabel") private Label detailChangeLabel;
 
     public static final String LANGUAGE_PROPERTY_NAME = "language";
 
@@ -81,33 +79,14 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
         window = (Window)wtkxSerializer.readObject(this, "stocktracker.wtkx");
         wtkxSerializer.bind(this, StockTracker.class);
 
-        // Wire up event handlers
-        stocksTableView.getTableViewSelectionListeners().add(new TableViewSelectionListener.Adapter() {
-            @Override
-            public void selectedRangesChanged(TableView tableView, Sequence<Span> previousSelectedRanges) {
-                refreshDetail();
-            }
-        });
-
-        stocksTableView.getComponentKeyListeners().add(new ComponentKeyListener.Adapter() {
-            @Override
-            public boolean keyPressed(Component component, int keyCode, Keyboard.KeyLocation keyLocation) {
-                if (keyCode == Keyboard.KeyCode.DELETE) {
-                    removeSelectedSymbols();
-                }
-
-                return false;
-            }
-        });
-
         window.open(display);
 
-        refreshTable();
+        refreshData();
 
         ApplicationContext.scheduleRecurringCallback(new Runnable() {
             @Override
             public void run() {
-                refreshTable();
+                refreshData();
             }
         }, REFRESH_INTERVAL);
 
@@ -132,8 +111,7 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
     public void resume() {
     }
 
-    @SuppressWarnings("unchecked")
-    private void refreshTable() {
+    private void refreshData() {
         StockQuery.runQuery(symbols, createTaskListener());
     }
 
@@ -173,8 +151,6 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
                      }
                  }
 
-                 refreshDetail();
-
                  DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
                      DateFormat.MEDIUM, Locale.getDefault());
                  lastUpdateLabel.setText(dateFormat.format(new Date()));
@@ -188,79 +164,29 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
         return taskListener;
     }
 
-    @SuppressWarnings("unchecked")
-    private void refreshDetail() {
-        int firstSelectedIndex = stocksTableView.getFirstSelectedIndex();
-
-        StockQuote stockQuote = null;
-
-        if (firstSelectedIndex != -1) {
-            int lastSelectedIndex = stocksTableView.getLastSelectedIndex();
-
-            if (firstSelectedIndex == lastSelectedIndex) {
-                List<StockQuote> tableData = (List<StockQuote>)stocksTableView.getTableData();
-                stockQuote = tableData.get(firstSelectedIndex);
-            } else {
-                stockQuote = new StockQuote();
-            }
-        } else {
-            stockQuote = new StockQuote();
-        }
-        symbolPane.setSelectedStockQuote(stockQuote);
-
-        StockQuoteView stockQuoteView = new StockQuoteView(stockQuote);
-        detailRootPane.load(stockQuoteView);
-
-        float change = stockQuote.getChange();
-        if (!Float.isNaN(change)
-            && change < 0) {
-            Form.setFlag(detailChangeLabel, new Form.Flag(MessageType.ERROR));
-        } else {
-            Form.setFlag(detailChangeLabel, (Form.Flag)null);
-        }
-    }
-
 
     @Override
     public void onEvent(SymbolListChangeEvent event) {
         if (event.getChangeType() == SymbolListChangeEvent.ChangeType.ADDED) {
-            addSymbol(event);
+            addSymbols(event);
         } else {
-            removeSelectedSymbols();
+            removeSymbols(event);
         }
     }
 
-    @SuppressWarnings("unchecked")
-    private void addSymbol(SymbolListChangeEvent event) {
-        String symbol = event.getSymbol();
-        if (symbols.indexOf(symbol) == -1) {
-            symbols.add(symbol);
-
-            List<StockQuote> tableData = (List<StockQuote>)stocksTableView.getTableData();
-            StockQuote stockQuote = new StockQuote();
-            stockQuote.setSymbol(symbol);
-            int index = tableData.add(stockQuote);
-
-            stocksTableView.setSelectedIndex(index);
+    private void addSymbols(SymbolListChangeEvent event) {
+        List<String> symbols = event.getSymbols();
+        for (String symbol : symbols) {
+            if (this.symbols.indexOf(symbol) == -1) {
+                this.symbols.add(symbol);
+            }
         }
-
-        refreshTable();
+        refreshData();
     }
 
-    private void removeSelectedSymbols() {
-        int selectedIndex = stocksTableView.getFirstSelectedIndex();
-        int selectionLength = stocksTableView.getLastSelectedIndex() - selectedIndex + 1;
-        stocksTableView.getTableData().remove(selectedIndex, selectionLength);
-        symbols.remove(selectedIndex, selectionLength);
-
-        if (selectedIndex >= symbols.getLength()) {
-            selectedIndex = symbols.getLength() - 1;
-        }
-
-        stocksTableView.setSelectedIndex(selectedIndex);
-
-        if (selectedIndex == -1) {
-            refreshDetail();
+    private void removeSymbols(SymbolListChangeEvent event) {
+        for (String symbol : event.getSymbols()) {
+            symbols.remove(symbol);
         }
     }
 

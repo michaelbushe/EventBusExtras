@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stocktracker:YahooPane wtkx:id="yahooFinancePane"
-                         styles="{horizontalAlignment:'right', verticalAlignment:'center'}"
     xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns:wtkx="http://pivot.apache.org/wtkx"

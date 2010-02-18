@@ -5,6 +5,8 @@ import org.apache.pivot.wtk.text.TextNode;
 import org.apache.pivot.wtkx.Bindable;
 import org.apache.pivot.wtkx.WTKX;
 import org.bushe.swing.event.EventBus;
+import org.bushe.swing.event.annotation.AnnotationProcessor;
+import org.bushe.swing.event.annotation.EventSubscriber;
 
 /**
  * Component for typing in stock symbols with add and remove buttons
@@ -16,6 +18,7 @@ public class SymbolPane extends BoxPane implements Bindable {
     private String lastSymbol;
 
     public SymbolPane() {
+        AnnotationProcessor.process(this);
     }
 
     @Override
@@ -63,10 +66,12 @@ public class SymbolPane extends BoxPane implements Bindable {
         return symbolTextInput.requestFocus();
     }
 
-    public void setSelectedStockQuote(StockQuote stockQuote) {
-        boolean enabled = stockQuote.getSymbol() == null || "".equals(stockQuote.getSymbol());
-        addSymbolButton.setEnabled(enabled);
-        removeSymbolsButton.setEnabled(!enabled);
+    @EventSubscriber
+    public void setSelectedStockQuote(StockQuoteSelection stockQuoteSelection) {
+        boolean symbolSelected = stockQuoteSelection.getStockQuotes() != null && !stockQuoteSelection.getStockQuotes().isEmpty();
+        addSymbolButton.setEnabled(!symbolSelected);
+        removeSymbolsButton.setEnabled(symbolSelected);
+        lastSymbol = symbolSelected ? stockQuoteSelection.getStockQuotes().get(0).getSymbol() : null;
     }
 
     private void addSymbol() {

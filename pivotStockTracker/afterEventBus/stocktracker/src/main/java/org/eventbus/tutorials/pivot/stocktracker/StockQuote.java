@@ -137,4 +137,21 @@ public class StockQuote {
             setVolume(Float.NaN);
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        StockQuote that = (StockQuote) o;
+
+        if (symbol != null ? !symbol.equals(that.symbol) : that.symbol != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return symbol != null ? symbol.hashCode() : 0;
+    }
 }

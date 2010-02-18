@@ -16,10 +16,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<BoxPane wtkx:id="rootPane" orientation="vertical" styles="{fill:true}"
+<stocktracker:DetailsPane wtkx:id="rootPane" orientation="vertical" styles="{fill:true}"
+    xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
     xmlns:wtkx="http://pivot.apache.org/wtkx"
     xmlns="org.apache.pivot.wtk">
-    <Label textKey="companyName" styles="{font:{size:12, bold:true}}"/>
+    <Label wtkx:id="changeLabel" textKey="companyName" styles="{font:{size:12, bold:true}}"/>
     <Separator/>
     <Form styles="{rightAlignLabels:true, fill:true}">
         <sections>
@@ -39,4 +40,4 @@ limitations under the License.
             </Form.Section>
         </sections>
     </Form>
-</BoxPane>
+</stocktracker:DetailsPane>
