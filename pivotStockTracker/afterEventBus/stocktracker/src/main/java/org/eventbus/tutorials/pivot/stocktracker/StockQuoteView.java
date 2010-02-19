@@ -25,8 +25,7 @@ public class StockQuoteView extends BeanDictionary {
     private static final DecimalFormat changeFormat = new DecimalFormat("+0.00;-0.00");
     private static final DecimalFormat volumeFormat = new DecimalFormat();
 
-    public StockQuoteView(StockQuote stockQuote) {
-        super(stockQuote);
+    public StockQuoteView() {
     }
 
     @Override

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.bushe:eventbus:javadoc:1.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-javadoc.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-javadoc-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-javadoc-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

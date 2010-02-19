@@ -27,22 +27,25 @@ import org.apache.pivot.wtkx.WTKX;
 import org.apache.pivot.wtkx.WTKXSerializer;
 import org.bushe.swing.event.EventBus;
 import org.bushe.swing.event.EventSubscriber;
+import org.bushe.swing.event.annotation.AnnotationProcessor;
+import org.bushe.swing.event.annotation.VetoSubscriber;
+import org.eventbus.tutorials.pivot.stocktracker.event.EventConstants;
+import org.eventbus.tutorials.pivot.stocktracker.event.SymbolListChangeEvent;
 
 import java.util.Comparator;
 import java.util.Locale;
 
 public class StockTracker implements Application, EventSubscriber<SymbolListChangeEvent> {
-    private ArrayList<String> symbols = new ArrayList<String>();
-
-    private Window window = null;
-
-    @WTKX(id="symbol.symbolPane")  private SymbolPane symbolPane;
-
     public static final String LANGUAGE_PROPERTY_NAME = "language";
-
     public static final long REFRESH_INTERVAL = 15000;
 
+    @WTKX(id="symbol.symbolPane")  private SymbolPane symbolPane;
+    private ArrayList<String> symbols = new ArrayList<String>();
+    private Window window = null;
+
+
     public StockTracker() {
+        AnnotationProcessor.process(this);
         symbols.setComparator(new Comparator<String>() {
             @Override
             public int compare(String s1, String s2) {
@@ -114,7 +117,10 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
              @Override
              public void taskExecuted(Task<StockQuote> task) {
                  List<StockQuote> quotes = (List<StockQuote>)task.getResult();
-                 EventBus.publish(quotes);
+                 for (StockQuote quote : quotes) {
+                     EventBus.publish(EventConstants.TOPIC_STOCK_QUOTE+"."+quote.getSymbol(), quote);
+                 }
+                 EventBus.publish(EventConstants.SUPER_TYPE_TOKEN_LIST_OF_STOCK_QUOTE, quotes);
              }
 
              @Override
@@ -125,6 +131,21 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
         return taskListener;
     }
 
+    @VetoSubscriber
+    public boolean disallowDuplicateAdd(SymbolListChangeEvent event) {
+        if (event.getChangeType() == SymbolListChangeEvent.ChangeType.ADDED) {
+            if (event != null && event.getSymbols() != null) {
+                for (String symbol : event.getSymbols()) {
+                    for (String existingSymbol : this.symbols) {
+                        if (existingSymbol.equals(symbol)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 
     @Override
     public void onEvent(SymbolListChangeEvent event) {
@@ -147,7 +168,9 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
 
     private void removeSymbols(SymbolListChangeEvent event) {
         for (String symbol : event.getSymbols()) {
-            symbols.remove(symbol);
+            if (symbol != null) {
+                symbols.remove(symbol);
+            }
         }
     }
 

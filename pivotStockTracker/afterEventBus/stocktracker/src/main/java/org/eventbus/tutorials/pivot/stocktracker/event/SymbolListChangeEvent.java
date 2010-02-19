@@ -1,13 +1,26 @@
-package org.eventbus.tutorials.pivot.stocktracker;
+package org.eventbus.tutorials.pivot.stocktracker.event;
 
 import org.apache.pivot.collections.ArrayList;
 import org.apache.pivot.collections.List;
+import org.bushe.swing.event.PublicationStatus;
+import org.bushe.swing.event.PublicationStatusTracker;
 
 
 /**
  * Event fired when the user adds or removes a symbol from the working list
  */
-public class SymbolListChangeEvent {
+public class SymbolListChangeEvent implements PublicationStatusTracker {
+    private PublicationStatus publicationStatus = PublicationStatus.Unpublished;
+
+    @Override
+    public PublicationStatus getPublicationStatus() {
+        return publicationStatus;
+    }
+
+    @Override
+    public void setPublicationStatus(PublicationStatus publicationStatus) {
+        this.publicationStatus = publicationStatus;
+    }
 
     public enum ChangeType {
         ADDED, REMOVED

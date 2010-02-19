@@ -6,17 +6,21 @@ import org.apache.pivot.collections.Sequence;
 import org.apache.pivot.wtk.*;
 import org.apache.pivot.wtk.content.TableViewRowComparator;
 import org.bushe.swing.event.EventBus;
+import org.bushe.swing.event.EventSubscriber;
 import org.bushe.swing.event.annotation.AnnotationProcessor;
-import org.bushe.swing.event.annotation.EventSubscriber;
+import org.eventbus.tutorials.pivot.stocktracker.event.EventConstants;
+import org.eventbus.tutorials.pivot.stocktracker.event.StockQuoteSelection;
+import org.eventbus.tutorials.pivot.stocktracker.event.SymbolListChangeEvent;
 
 import java.util.Comparator;
 
 /**
  * Refactored out from Pivot's StockTracker.java
  */
-public class StockTableView extends TableView {
+public class StockTableView extends TableView implements EventSubscriber<List<StockQuote>> {
 
     public StockTableView() {
+        EventBus.subscribe(EventConstants.SUPER_TYPE_TOKEN_LIST_OF_STOCK_QUOTE, this);
         AnnotationProcessor.process(this);
         getTableViewSelectionListeners().add(new TableViewSelectionListener.Adapter() {
             @Override
@@ -37,7 +41,7 @@ public class StockTableView extends TableView {
                 } else {
                     stockQuote = new StockQuote();
                 }
-                EventBus.publish(new StockQuoteSelection(new ArrayList(stockQuote)));
+                EventBus.publish(new StockQuoteSelection(new ArrayList<StockQuote>(stockQuote)));
             }
         });
 
@@ -80,7 +84,7 @@ public class StockTableView extends TableView {
         });
     }
 
-    @EventSubscriber
+    @org.bushe.swing.event.annotation.EventSubscriber
     public void addOrRemoveSymbols(SymbolListChangeEvent event) {
         int selectedIndex = getFirstSelectedIndex();
         int selectionLength = getLastSelectedIndex() - selectedIndex + 1;
@@ -90,9 +94,9 @@ public class StockTableView extends TableView {
             StockQuote stockQuote = new StockQuote();
             stockQuote.setSymbol(symbol);
             if (event.getChangeType() == SymbolListChangeEvent.ChangeType.ADDED) {
+                selectedIndex = tableData.add(stockQuote);
                 if (first) {
                     //Only select the first one since we don't know the order
-                    selectedIndex = tableData.add(stockQuote);
                     selectionLength = 1;
                     EventBus.publish(stockQuote);
                 }
@@ -112,8 +116,7 @@ public class StockTableView extends TableView {
         setSelectedIndex(selectedIndex);
     }
 
-    @EventSubscriber
-    public void updateData(List<StockQuote> quotes) {
+    public void onEvent(List<StockQuote> quotes) {
         // Preserve any existing sort and selection
         Sequence<?> selectedStocks = getSelectedRows();
 

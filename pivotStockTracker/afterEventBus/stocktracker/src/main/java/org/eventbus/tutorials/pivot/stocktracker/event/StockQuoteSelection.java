@@ -1,6 +1,7 @@
-package org.eventbus.tutorials.pivot.stocktracker;
+package org.eventbus.tutorials.pivot.stocktracker.event;
 
 import org.apache.pivot.collections.List;
+import org.eventbus.tutorials.pivot.stocktracker.StockQuote;
 
 /**
  * Event published when the user's selection changes

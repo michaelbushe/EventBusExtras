@@ -4,10 +4,22 @@
     xmlns:stocktracker="org.eventbus.tutorials.pivot.stocktracker"
     xmlns:content="org.apache.pivot.wtk.content"
     xmlns:wtkx="http://pivot.apache.org/wtkx"
+    xmlns:validation="org.apache.pivot.wtk.text.validation"
     xmlns="org.apache.pivot.wtk">
      <Label text="%symbol" styles="{font:{bold:true}}" />
-     <TextInput wtkx:id="symbolTextInput" textSize="10"
-         maximumLength="8" />
+     <Form>
+        <sections>
+            <Form.Section>
+                <TextInput wtkx:id="symbolTextInput" textSize="10" maximumLength="8">
+                    <validator>
+                        <validation:RegexTextValidator>
+                            <pattern>^([A-Za-z]*)</pattern>
+                        </validation:RegexTextValidator>
+                     </validator>
+                 </TextInput>
+            </Form.Section>
+        </sections>
+     </Form>
      <LinkButton wtkx:id="addSymbolButton" enabled="false"
          tooltipText="%addSymbol">
          <buttonData>

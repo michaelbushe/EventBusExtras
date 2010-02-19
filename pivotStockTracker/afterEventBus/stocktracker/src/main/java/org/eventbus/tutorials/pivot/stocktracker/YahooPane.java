@@ -8,11 +8,10 @@ import org.apache.pivot.wtkx.Bindable;
 import org.apache.pivot.wtkx.WTKX;
 import org.bushe.swing.event.EventBus;
 import org.bushe.swing.event.EventSubscriber;
-import org.bushe.swing.event.generics.TypeReference;
+import org.eventbus.tutorials.pivot.stocktracker.event.EventConstants;
 
 import java.awt.*;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -25,19 +24,18 @@ public class YahooPane extends TablePane implements Bindable {
 
     @WTKX private Button yahooFinanceButton;
     @WTKX(id="lastUpdateLabel")  private org.apache.pivot.wtk.Label lastUpdateLabel;
-    private EventSubscriber<StockQuote> subscriber;
+    private EventSubscriber<List<StockQuote>> subscriber;
 
     public YahooPane() {
-        Type type = new TypeReference<List<StockQuote>>() {}.getType();
-        subscriber = new EventSubscriber<StockQuote>() {
+        subscriber = new EventSubscriber<List<StockQuote>>() {
             @Override
-            public void onEvent(StockQuote stockQuote) {
+            public void onEvent(List<StockQuote> stockQuotes) {
                 DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG,
                     DateFormat.MEDIUM, Locale.getDefault());
                 lastUpdateLabel.setText(dateFormat.format(new Date()));
             }
         };
-        EventBus.subscribe(type, subscriber);
+        EventBus.subscribe(EventConstants.SUPER_TYPE_TOKEN_LIST_OF_STOCK_QUOTE, subscriber);
     }
 
     @Override
