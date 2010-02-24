@@ -4,28 +4,19 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="63be584f-0b6c-41d3-b079-51ee5aeb5734" name="Default" comment="Refactored the data model to use pub/sub.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stocktracker.iml" afterPath="$PROJECT_DIR$/stocktracker.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/EventConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bushe_eventbus_javadoc_1_4.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteSelection.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/StockQuoteSelection.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bushe_eventbus_sources_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/SymbolListChangeEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java" />
+    <list default="true" readonly="true" id="63be584f-0b6c-41d3-b079-51ee5aeb5734" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEventListener.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx" afterPath="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../pom.xml" afterPath="$PROJECT_DIR$/../../pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent$ChangeType.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTableView.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTableView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/StockTracker$5.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/DuplicateSymbolEvent.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/StockTracker$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../target/classes/org/eventbus/tutorials/pivot/stocktracker/SymbolPane$4.class" afterPath="" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="stocktracker.iws" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,9 +77,7 @@
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="18" column="13" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,10 +103,8 @@
       <file leaf-file-name="StockTableView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTableView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="0" selection-start="6214" selection-end="6214" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="100" column="20" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,9 +113,7 @@
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/EventConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="0" selection-start="0" selection-end="459" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,15 +136,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockTracker.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StockTracker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="0" selection-start="6084" selection-end="6084" vertical-scroll-proportion="-25.26923">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#suspend#0;class#StockTracker#0" expanded="false" />
-                <element signature="method#resume#0;class#StockTracker#0" expanded="false" />
-              </folding>
+            <state line="63" column="0" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.58064514">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventDispatchThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/awt/EventDispatchThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="431" column="15" selection-start="15700" selection-end="15700" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DuplicateSymbolEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/DuplicateSymbolEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="4" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -204,9 +203,7 @@
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/SymbolListChangeEvent.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="23" column="13" selection-start="336" selection-end="748" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,7 +211,7 @@
       <file leaf-file-name="SymbolPane.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="-6.3076925">
+            <state line="43" column="8" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -226,9 +223,7 @@
         <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="61" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -251,10 +246,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stocktracker.symbol.wtkx" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stocktracker.symbol.wtkx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="39" selection-end="964" vertical-scroll-proportion="0.5038168">
+            <state line="53" column="0" selection-start="0" selection-end="2298" vertical-scroll-proportion="-18.23077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/lang/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4643" column="37" selection-start="182032" selection-end="182047" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Keyboard.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-wtk/1.4/pivot-wtk-1.4.jar!/org/apache/pivot/wtk/Keyboard.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="30" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -272,7 +285,7 @@
       <file leaf-file-name="stocktracker.yahoofinance.wtkx" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.yahoofinance.wtkx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+            <state line="24" column="0" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -304,14 +317,15 @@
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEventImpl.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolListChangeEvent.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java" />
-        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/EventConstants.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTableView.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java" />
         <option value="$PROJECT_DIR$/../../pom.xml" />
+        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/DuplicateSymbolEvent.java" />
         <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java" />
         <option value="$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx" />
+        <option value="$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java" />
       </list>
     </option>
   </component>
@@ -359,6 +373,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,22 +491,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="109" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="120" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="120" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../pivot/pivot1.4/trunk/tutorials/src/org/apache/pivot/tutorials/stocktracker" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="129" />
@@ -505,22 +519,23 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="com.siemens.gs.nhii.plm.alphatab.AlphaTab" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.eventbus.tutorials.pivot.stocktracker" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.eventbus.tutorials.pivot.stocktracker.event" />
       <recent name="org.eventbus.tutorials.pivot.stocktracker" />
     </key>
   </component>
@@ -725,20 +740,20 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32849604" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29551452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14907652" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23878628" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18073879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24145617" sideWeight="0.5171504" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24517088" sideWeight="0.69525063" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24145617" sideWeight="0.31530344" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.3298153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="24" y="330" width="1344" height="244" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17810026" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -754,7 +769,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored the data model to use pub/sub." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added topic subscriptions, generic type subscription, veto validation, form validator.  Moved events to event package.  Added EventBus source and javadoc dependences.  Nearly complete, ready for outside review." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -770,6 +785,7 @@
     <MESSAGE value="First use of the EventBus, replaces the add/notify listener pattern." />
     <MESSAGE value="All refactorings except the data model." />
     <MESSAGE value="Refactored the data model to use pub/sub." />
+    <MESSAGE value="Added topic subscriptions, generic type subscription, veto validation, form validator.  Moved events to event package.  Added EventBus source and javadoc dependences.  Nearly complete, ready for outside review." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -779,235 +795,177 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-wtk/1.4/pivot-wtk-1.4.jar!/org/apache/pivot/wtk/effects/WatermarkDecorator.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/collections/List.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="602" selection-end="602" vertical-scroll-proportion="0.33266532">
-          <folding />
-        </state>
+        <state line="5" column="17" selection-start="170" selection-end="170" vertical-scroll-proportion="0.11214953" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-wtk/1.4/pivot-wtk-1.4.jar!/org/apache/pivot/wtk/ComponentKeyListener.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/EventSubscriber.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="627" selection-end="627" vertical-scroll-proportion="0.33667335">
-          <folding />
-        </state>
+        <state line="7" column="8" selection-start="198" selection-end="198" vertical-scroll-proportion="0.16252822" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-wtk/1.4/pivot-wtk-1.4.jar!/org/apache/pivot/wtk/TableView.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/ThreadSafeEventService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="18" selection-start="9010" selection-end="9010" vertical-scroll-proportion="0.31663325">
-          <folding />
-        </state>
+        <state line="914" column="0" selection-start="44386" selection-end="44386" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/ChangeCellRenderer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/serialization/JSONSerializer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0">
+        <state line="58" column="45" selection-start="3655" selection-end="3655" vertical-scroll-proportion="0.38785046" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/beans/BeanDictionary.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="10" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.3317757" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="867" selection-end="867" vertical-scroll-proportion="0.08126411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="69" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6286837" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="3" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/StockQuoteSelection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/ThreadSafeEventService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="18" selection-start="10532" selection-end="10532" vertical-scroll-proportion="0.3317757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/SwingEventService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="585" selection-end="585" vertical-scroll-proportion="0.3364486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/EventBus.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="350" selection-end="350" vertical-scroll-proportion="0.28037384">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/EventServiceLocator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="65" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.47663552">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/collections/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="170" selection-end="170" vertical-scroll-proportion="0.11214953">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4.jar!/org/bushe/swing/event/EventSubscriber.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="8" selection-start="198" selection-end="198" vertical-scroll-proportion="0.16252822">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/SwingEventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="4044" selection-end="4044" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/EventBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2787" selection-end="2787" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/ThreadSafeEventService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="914" column="0" selection-start="44386" selection-end="44386" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/annotation/EventSubscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="3123" selection-end="3123" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/serialization/JSONSerializer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="45" selection-start="3655" selection-end="3655" vertical-scroll-proportion="0.38785046">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-core/1.4/pivot-core-1.4.jar!/org/apache/pivot/beans/BeanDictionary.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="10" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.3317757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="867" selection-end="867" vertical-scroll-proportion="0.08126411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/EventConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="0" selection-end="459" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/EventServiceLocator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="0" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="52" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="8" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTableView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="0" selection-start="6214" selection-end="6214" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="100" column="20" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../pom.xml">
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/EventConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="69" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.6286837">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="0" selection-end="459" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.wtkx">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/annotation/EventSubscriber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="1" selection-start="3229" selection-end="3229" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="91" column="0" selection-start="3123" selection-end="3123" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.yahoofinance.wtkx">
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/ChangeCellRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="23" column="13" selection-start="996" selection-end="996" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/DetailsPane.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/EventBus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="66" column="0" selection-start="2787" selection-end="2787" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/SwingEventService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="4044" selection-end="4044" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/bushe/eventbus/1.4/eventbus-1.4-sources.jar!/org/bushe/swing/event/EventServiceLocator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockQuoteView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="52" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/SymbolListChangeEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="336" selection-end="748" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="23" column="13" selection-start="336" selection-end="748" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/YahooPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.wtkx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="1" selection-start="3229" selection-end="3229" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.detail.wtkx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
+    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.table.wtkx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="0" selection-start="6084" selection-end="6084" vertical-scroll-proportion="-25.26923">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#suspend#0;class#StockTracker#0" expanded="false" />
-            <element signature="method#resume#0;class#StockTracker#0" expanded="false" />
-          </folding>
+        <state line="23" column="0" selection-start="1116" selection-end="1116" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.yahoofinance.wtkx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="0" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/event/DuplicateSymbolEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="4" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/SymbolPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="-6.3076925">
+        <state line="43" column="8" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4643" column="37" selection-start="182032" selection-end="182047" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/pivot/pivot-wtk/1.4/pivot-wtk-1.4.jar!/org/apache/pivot/wtk/Keyboard.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../src/main/resources/org/eventbus/tutorials/pivot/stocktracker/stocktracker.symbol.wtkx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="39" selection-end="964" vertical-scroll-proportion="0.5038168">
+        <state line="53" column="0" selection-start="0" selection-end="2298" vertical-scroll-proportion="-18.23077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/awt/EventDispatchThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="431" column="15" selection-start="15700" selection-end="15700" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/java/org/eventbus/tutorials/pivot/stocktracker/StockTracker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="2554" selection-end="2554" vertical-scroll-proportion="0.58064514">
           <folding />
         </state>
       </provider>

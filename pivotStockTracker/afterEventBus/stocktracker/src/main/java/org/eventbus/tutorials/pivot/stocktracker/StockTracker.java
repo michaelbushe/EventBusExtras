@@ -29,6 +29,7 @@ import org.bushe.swing.event.EventBus;
 import org.bushe.swing.event.EventSubscriber;
 import org.bushe.swing.event.annotation.AnnotationProcessor;
 import org.bushe.swing.event.annotation.VetoSubscriber;
+import org.eventbus.tutorials.pivot.stocktracker.event.DuplicateSymbolEvent;
 import org.eventbus.tutorials.pivot.stocktracker.event.EventConstants;
 import org.eventbus.tutorials.pivot.stocktracker.event.SymbolListChangeEvent;
 
@@ -138,6 +139,7 @@ public class StockTracker implements Application, EventSubscriber<SymbolListChan
                 for (String symbol : event.getSymbols()) {
                     for (String existingSymbol : this.symbols) {
                         if (existingSymbol.equals(symbol)) {
+                            EventBus.publish(new DuplicateSymbolEvent(existingSymbol));
                             return true;
                         }
                     }
